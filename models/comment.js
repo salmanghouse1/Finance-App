@@ -1,21 +1,26 @@
-const {Schema,model}= require('mongoose');
+// const mongoose = require('mongoose');
+// const {Schema}= require('mongoose');
 
 
 
 
-const commentSchema={
-comment:{
-    type:String,
-}
-,
-date:{
-    type:Date,
-    default:Date.now
-}
 
-}
+// const commentSchema=new Schema({
 
-const Comment = model('Comment',commentSchema);
+// writtenBy:{
+//     type:String
+// },
+// createdAt:{
+//     type:Date,
+//     default:Date.now
+// },
+// commentBody:{
+//     type:String,
+// }
 
 
-module.exports= Comment;
+// })
+
+
+
+// module.exports= mongoose.models.Comment||mongoose.model('Comment',commentSchema);

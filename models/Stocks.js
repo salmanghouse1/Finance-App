@@ -1,7 +1,8 @@
-const {Schema,model}= require('mongoose');
+const mongoose = require('mongoose');
+const {Schema}= require('mongoose');
 
 
-const Stocks = model('Stocks',stockSchema);
+
 
 
 const stockSchema = new Schema({
@@ -15,39 +16,40 @@ stockName: {
     type: Date,
     default: Date.now
   },
-  price: {
+  currentPrice: {
     type: String,
     default: '0'
   },
-  sellPrice: {
+  soldPrice: {
     type: String,
     default: '2'
   },
-  buyPrice: {
+  boughtPrice: {
     type: String,
     default: '2'
   },
-  wishlist: [],
-  comments:[{
-type:Schema.Types.ObjectId,
-ref:'Comment'
-  }]
+//   comments:[{
+// type:Schema.Types.ObjectId,
+// ref:'Comment'
+//   }]
     
-},{
-
-  toJSON:
-  {
-    virtuals:true
-  },id:false
-});
-
-stockSchema.virtual('commentCount').get({
-function(){
-  return this.comments.length
 }
-})
+// ,{
 
-module.exports = Stocks;
+//   toJSON:
+//   {
+//     virtuals:true
+//   },id:false
+// }
+);
+
+// stockSchema.virtual('commentCount').get({
+// function(){
+//   return this.comments.length
+// }
+// })
+
+module.exports = mongoose.models.Stocks||mongoose.model('Stocks',stockSchema);
 
 
 

@@ -1,12 +1,17 @@
 const router = require('express').Router();
 const htmlRoutes = require('./html/html-routes');
-const apiRoutes = require('./api/api-routes');
-
+// const commentRoutes = require('./api/comment-routes');
+const apiRoutes = require('./api');
 
 
 router.use('/api', apiRoutes);
-router.use('/', htmlRoutes);
 
+// const stockRoutes = require('./html/index.js');
+
+
+router.use('/', htmlRoutes);
+// router.use('/api/comments/', commentRoutes);
+// router.use('/api/stocks/', htmlRoutes);
 
 
 router.use((req, res) => {

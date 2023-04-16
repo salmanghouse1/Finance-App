@@ -1,0 +1,14 @@
+[
+    {
+    "stockName": "Bitcoin",
+    "createdBy": "Salman",
+       "currentPrice":"5",
+       "soldPrice":"6",
+       "boughtPrice":"3",
+       "comments":[{
+           "writtenBy":"Salman",
+           "commentBody":"Great"
+       }]
+    
+   }
+]
