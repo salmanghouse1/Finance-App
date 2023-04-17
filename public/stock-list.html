@@ -10,12 +10,15 @@
     href="https://fonts.googleapis.com/css?family=Spicy+Rice&display=swap&family=Karla:400,700|Rubik:400,400i,700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
 <body class="bgImage">
   <header class="py-3 mb-3">
+    <nav>
+      <a class="btn display-block rounded bg-black text-white p-3 hover:pt-5" href="/add-stock">Create a New Stock Note.</a>
+    </nav>
     <div class="flex-row justify-space-between align-center container-fluid mx-auto">
       <a href="/">
         <h1 class="text-light bg-dark py-3 px-4 logo round-25-80">Stocks App</h1>
@@ -31,13 +34,14 @@
 
     <section class="bg-dark p-3 col-12 col-lg-8 mb-3 rounded">
       <h2 class="text-light ">Check out the stocks!</h2>
-      <div id="stocks-list" class="flex-row justify-space-between"></div>
+      <div class="columns is-multiline" id="stocks-list">
+      </div>
     </section>
 
     <section class="bg-dark p-3 col-12 col-lg-4 mb-3 rounded">
       <h2 class="text-light">Looking to do something else?</h2>
       <nav>
-        <a class="btn display-block rounded" href="/">Create a New Stock Note.</a>
+        <a class="btn display-block rounded" href="/add-stock">Create a New Stock Note.</a>
       </nav>
       </section>
       </main>
