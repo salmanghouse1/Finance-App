@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const {Schema}= require('mongoose');
+const dateFormat = require('../utils/dateFormat');
 
 
 
@@ -14,8 +15,9 @@ stockName: {
   },
   createdAt: {
     type: Date,
-    default: Date.now
-  },
+    default: Date.now,
+    get: (createdAtVal) => dateFormat(createdAtVal)
+   },
   currentPrice: {
     type: String,
     default: '0'
@@ -28,26 +30,28 @@ stockName: {
     type: String,
     default: '2'
   },
-//   comments:[{
-// type:Schema.Types.ObjectId,
-// ref:'Comment'
-//   }]
+  comments:[{
+type:Schema.Types.ObjectId,
+ref:'Comment'
+  }]
     
 }
-// ,{
+,{
 
-//   toJSON:
-//   {
-//     virtuals:true
-//   },id:false
-// }
+  toJSON:
+  {
+    virtuals:true,
+    getters: true
+
+  },id:false
+}
 );
 
-// stockSchema.virtual('commentCount').get({
-// function(){
-//   return this.comments.length
-// }
-// })
+stockSchema.virtual('commentCount').get(
+function(){
+  return this.comments.length
+}
+)
 
 module.exports = mongoose.models.Stocks||mongoose.model('Stocks',stockSchema);
 

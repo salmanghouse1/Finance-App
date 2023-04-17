@@ -18,12 +18,11 @@ router.route('/:stockId').post(addComment);
 
 router
 .route('/:stockId/:commentId')
-.put(addReply)
 .delete(removeComment);
 
 
 
-router.route('/:stockId/:commentId/:replyId').delete(removeReply)
+// router.route('/:stockId/:commentId/:replyId').delete(removeReply)
 
 
 

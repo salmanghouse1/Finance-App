@@ -14,20 +14,20 @@ app.use(require('./routes'));
 
 mongoose.connect(process.env.MONGO_DB_URI||'localhost:27001/finance-app', {useNewUrlParser:true,useUnifiedTopology:true});
 
-const seedStocks =[
-        {
-        "stockName": "Bitcoin",
-        "createdBy": "Salman",
-           "currentPrice":"5",
-           "soldPrice":"6",
-           "boughtPrice":"3",
-           "comments":[{
-               "writtenBy":"Salman",
-               "commentBody":"Great"
-           }]
+// const seedStocks =[
+//         {
+//         "stockName": "Bitcoin",
+//         "createdBy": "Salman",
+//            "currentPrice":"5",
+//            "soldPrice":"6",
+//            "boughtPrice":"3",
+//            "comments":[{
+//                "writtenBy":"Salman",
+//                "commentBody":"Great"
+//            }]
         
-       }
-    ]
+//        }
+//     ]
 
 // const seedDB = async () => {
 //     await Stock.deleteMany({});

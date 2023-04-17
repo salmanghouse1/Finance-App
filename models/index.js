@@ -1,9 +1,7 @@
 const Stocks = require('./Stocks.js');
-// const Comment = require('./comment');
+const Comment = require('./comment.js');
 
 
 
 
-module.exports = {Stocks
-    // Comment
-};
+module.exports = {Stocks,Comment};
