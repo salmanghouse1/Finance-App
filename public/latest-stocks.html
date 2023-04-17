@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Social Media App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+  </head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://bulma.io">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<lottie-player src="https://assets4.lottiefiles.com/packages/lf20_ystsffqy.json"  background="transparent"  speed="1"  style="width: 112px; height: 88px;" hover loop  ></lottie-player>
+      </a>
+  
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbarBasicExample" class="navbar-menu">
+      
+  
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary" href="./">
+              <strong>Stock Notes</strong>
+            </a>
+            <a class="button is-light" href="./add-stock.html">
+              Add Notes
+            </a>
+            <a class="button is-primary" href="./latest-stocks.html">
+              <strong>Best Stocks</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+<div style="background-color:black;color:white;">
+    <h1 style="text-align:center">Finance Apps Stocks</h1>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <h2 style="text-align:center">Click The Coin...</h2>
+<lottie-player style="margin:0 auto;width: 300px; height: 300px;" id="getDataButton" src="https://assets4.lottiefiles.com/packages/lf20_knayiqhb.json"  background="transparent"  speed="1" hover loop  ></lottie-player>
+    
+    <div id="stocks" style="display:none">
+        <div id="forex-ticker" style="margin:0 auto;"></div>
+<script type="text/javascript" src="https://1forge.com/widget/forexTicker.js"></script>
+<script>
+    ForexTicker({
+        pairs: ["BTC/USD","EUR/USD"],
+        width: "900 px",
+        height: "500 px",
+        graph: true, // optional
+        ticker: false, // optional
+        apiKey: "Your_Api_Key" // optional
+                });
+</script> 
+    </div>
+  </div>
+  <!-- <script src="./assets/js/stock-list.js"></script> -->
+</body>
+<script type="text/javascript">
+   
+document.addEventListener("DOMContentLoaded", function(){
+
+
+document.getElementById('getDataButton').addEventListener('click',function(){
+
+document.getElementById('stocks').style.display="block";
+})});
+</script>
+</html>

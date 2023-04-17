@@ -23,18 +23,14 @@ router.get('/', (req, res) => {
 //   res.sendFile(path.join(__dirname, '../../public/index.html'));
 // });
 
-router.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../public/login.html'));
+router.get('/latest-stocks', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../public/latest-stocks.html'));
 });
 
 router.get('/add-stock', (req, res) => {
   res.sendFile(path.join(__dirname, '../../public/add-stock.html'));
 });
 
-
-router.get('/signup', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../public/sign-up.html'));
-});
 
 
  
