@@ -47,11 +47,9 @@ ref:'Comment'
 }
 );
 
-stockSchema.virtual('commentCount').get(
-function(){
-  return this.comments.length
-}
-)
+stockSchema.virtual('commentCount').get(function() {
+  return this.comments.reduce((total, comment) => total + comment.replies.length + 1, 0);
+ });
 
 module.exports = mongoose.models.Stocks||mongoose.model('Stocks',stockSchema);
 

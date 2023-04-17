@@ -18,10 +18,9 @@ router.route('/:stockId').post(addComment);
 
 router
 .route('/:stockId/:commentId')
-.delete(removeComment);
+.delete(removeComment).put(addReply);
 
-
-
+router.route('/:stockId/:commentId/:replyId').delete(removeReply);
 // router.route('/:stockId/:commentId/:replyId').delete(removeReply)
 
 
