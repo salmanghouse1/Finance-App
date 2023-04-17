@@ -1,0 +1,15 @@
+.box {
+    background-color: rgba(0,0,0,.5);
+    color: #fff;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+
+.bgImage{
+    background-image: url('../images/bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
