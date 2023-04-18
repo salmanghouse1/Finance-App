@@ -45,7 +45,7 @@ getStockById({ params }, res) {
     });
    },
 
-   updatePizza({ params, body }, res) {
+   updateStock({ params, body }, res) {
     Stocks.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })
     .then(dbStockData => {
     if (!dbStockData) {

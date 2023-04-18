@@ -5,8 +5,7 @@ const {
     getStockById,
     createStock,
     updateStock,
-    deleteStock,
-    
+ 
    } = require('../../controllers/stockControllers.js');
    
 
@@ -20,7 +19,7 @@ router
  .route('/:id')
  .get(getStockById)
  .put(updateStock)
- .delete(deleteStock);
+ 
  
 
 
