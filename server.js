@@ -12,7 +12,7 @@ app.use(express.static('public'));
 
 app.use(require('./routes'));
 
-mongoose.connect(process.env.MONGO_DB_URI||'localhost:27001/finance-app', {useNewUrlParser:true,useUnifiedTopology:true});
+mongoose.connect(process.env.MONGO_DB_URI||'localhost:27017/finance-app', {useNewUrlParser:true,useUnifiedTopology:true});
 
 // const seedStocks =[
 //         {
