@@ -45,28 +45,17 @@ getStockById({ params }, res) {
     });
    },
 
-   updateStock({ params, body }, res) {
-    Stocks.findOneAndUpdate({ _id: params.id }, body, { new: true })
-    .then(dbPizzaData => {
-    if (!dbPizzaData) {
-    res.status(404).json({ message: 'No pizza found with this id!' });
+   updatePizza({ params, body }, res) {
+    Stocks.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })
+    .then(dbStockData => {
+    if (!dbStockData) {
+    res.status(404).json({ message: 'No Stock found with this id!' });
     return;
     }
-    res.json(dbPizzaData);
+    res.json(dbStockData);
     })
     .catch(err => res.status(400).json(err));
-   },
-   deleteStock({ params }, res) {
-    Stocks.findOneAndDelete({ _id: params.id })
-    .then(dbPizzaData => {
-    if (!dbPizzaData) {
-    res.status(404).json({ message: 'No pizza found with this id!' });
-    return;
-    }
-    res.json(dbPizzaData);
- })
- .catch(err => res.status(400).json(err));
-}  
+   }
 
 }
 module.exports = stockController;

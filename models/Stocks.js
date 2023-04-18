@@ -8,10 +8,15 @@ const dateFormat = require('../utils/dateFormat');
 
 const stockSchema = new Schema({
 stockName: {
-    type: String
+    type: String,
+    required: true,
+    trim: true
   },
   createdBy: {
-    type: String
+    type: String,
+    required: true,
+    trim: true
+   
   },
   createdAt: {
     type: Date,

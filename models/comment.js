@@ -36,18 +36,26 @@ const ReplySchema = new Schema(
       type: Schema.Types.ObjectId,
       default: () => new Types.ObjectId()
       },
-  replyBody: {
-  type: String
+      replyBody: {
+      type: String,
+      required: true
+      },
+      writtenBy: {
+      type: String,
+      required: true,
+      },
+      createdAt: {
+      type: Date,
+      default: Date.now,
+     
+  },get: createdAtVal => dateFormat(createdAtVal)
   },
-  writtenBy: {
-  type: String
-  },
-  createdAt: {
-  type: Date,
-  default: Date.now,
-  get: createdAtVal => dateFormat(createdAtVal)
-  }
-  }
+{
+toJSON: {
+getters: true
+}
+}
+
  );
 
 const CommentSchema = new Schema({
