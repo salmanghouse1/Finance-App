@@ -1,3 +1,4 @@
+
 const $backBtn = document.querySelector('#back-btn');
 const $stockName = document.querySelector('#stock-name');
 const $createdBy = document.querySelector('#created-by');
@@ -9,42 +10,44 @@ const $commentSection = document.querySelector('#comment-section');
 const $newCommentForm = document.querySelector('#new-comment-form');
 
 let stockId;
+
+
 function getStock() {
   // get id of pizza
+
   const searchParams = new URLSearchParams(document.location.search.substring(1));
-  console.log(searchParams);
-  const stocksId = searchParams.get('id');
+  
+  console.log(JSON.stringify(searchParams));
+  const stockId = searchParams.get('id');
   // get pizzaInfo
-  fetch(`/api/stocks/${stocksId}`,{method: 'GET'})
+  fetch(`/api/stocks/${stockId}`)
   .then(response => {
-  console.log(response);
-  return response.json();
-  })
-  .then(printStock).catch(err => {
-    console.log(err);
-    alert('Cannot find a stock with this id! Taking you back.');
-    window.history.back();
-    });
- }
-function printStock(stockData) {
-  console.log(stockData);
+  
+  if (!response.ok) {
+    throw new Error({ message: 'Something went wrong!' });
+    }
+   return response.json();
+    })
+    .then(printStock)
+    .catch(err => {
+      console.log(err);
+      alert('Cannot find a stock with this id! Taking you back.');
+      
+      });
+     
+}
 
-  stockId = stockData._id;
+function printStock(pizzaData) {
+  console.log(pizzaData);
 
-  const { stockName, createdBy, createdAt, currentPrice,soldPrice,boughtPrice, comments } = stockData;
+  pizzaId = pizzaData._id;
 
-  $stockName.textContent = stockName;
+  const { pizzaName, createdBy, createdAt,comments } = pizzaData;
+
+  $stockName.textContent = pizzaName;
   $createdBy.textContent = createdBy;
   $createdAt.textContent = createdAt;
-  $boughtPrice.textContent=boughtPrice;
-  $currentPrice.textContent=currentPrice;
-  $soldPrice.textContent=soldPrice;
-// $size.textContent = size;
-
-
-  // $toppingsList.innerHTML = toppings
-  //   .map(topping => `<span class="col-auto m-2 text-center btn">${topping}</span>`)
-  //   .join('');
+  
 
   if (comments && comments.length) {
     comments.forEach(printComment);
