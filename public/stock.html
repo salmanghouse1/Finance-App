@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>stock Discussion</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
   <link
     href="https://fonts.googleapis.com/css?family=Spicy+Rice&display=swap&family=Karla:400,700|Rubik:400,400i,700&display=swap"
     rel="stylesheet" />
@@ -27,13 +29,14 @@
   <main class="container-fluid flex-row mx-auto justify-space-between align-start">
     <section class="col-12 col-lg-4 bg-tertiary p-3 rounded">
       <h2 class="text-dark" id="stock-name"></h2>
-      <h4 class="text-dark">By: <span id="created-by"></span></h4>
+      <h4 class="text-dark">By: <span style="font-size:30px;" id="created-by"></span></h4>
       <div class="w-100 border-dark-top my-3"></div>
       <h4 class="text-dark">Created At: <span id="created-at"></span></h4>
       <div class="w-100 border-dark-top my-3"></div>
-      <h4 class="text-dark">Suggested Prices<span id="size"></span><ul><li id="cPrice"></li>
-        <li id="sPrice"></li>
-        <li id="bPrice"></li></ul></h4>
+      <h4 class="text-dark">Suggested Prices<span id="size"></span><ul style="font-size: 20px;">
+        <li>Current Price:<span id="cPrice"></span></li>
+        <li>Sold Price:<span id="sPrice"></span></li>
+        <li>Bought Price<span id="bPrice"></span></li></ul></h4>
       <div class="w-100 border-dark-top my-3"></div>
     </section>
 

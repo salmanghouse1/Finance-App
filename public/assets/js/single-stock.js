@@ -33,6 +33,8 @@ function getStock() {
       console.log(err);
       alert('Cannot find a stock with this id! Taking you back.');
       
+ window.history.back();
+
       });
      
 }
@@ -42,11 +44,14 @@ function printStock(pizzaData) {
 
   pizzaId = pizzaData._id;
 
-  const { pizzaName, createdBy, createdAt,comments } = pizzaData;
+  const { pizzaName, createdBy, createdAt,currentPrice,soldPrice,boughtPrice,comments } = pizzaData;
 
   $stockName.textContent = pizzaName;
   $createdBy.textContent = createdBy;
   $createdAt.textContent = createdAt;
+  $currentPrice.textContent = currentPrice;
+  $soldPrice.textContent = soldPrice;
+  $boughtPrice.textContent = boughtPrice;
   
 
   if (comments && comments.length) {
@@ -62,30 +67,67 @@ function printComment(comment) {
   commentDiv.classList.add('my-2', 'card', 'p-2', 'w-100', 'text-dark', 'rounded');
 
   const commentContent = `
+  <article class="media">
+  <figure class="media-left">
+    <p class="image is-64x64">
+      <img src="https://bulma.io/images/placeholders/128x128.png">
+    </p>
+  </figure>
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>${comment.writtenBy} commented on ${comment.createdAt}:</strong>
+        <br>
+       ${comment.commentBody}
+        <br>
+        <small><a>Like</a> · <a>Reply</a> · 3 hrs</small>
+      </p>
+      ${
+        comment.replies && comment.replies.length
+          ? `<h5>${comment.replies.length} ${
+              comment.replies.length === 1 ? 'Reply' : 'Replies'
+            }</h5>
+      ${comment.replies.map(printReply).join('')}`
+          : '<h5 class="p-1">No replies yet!</h5>'
+      }
+    </div>
+</article>
+<article class="media">
+  <figure class="media-left">
+    <p class="image is-64x64">
+      <img src="https://bulma.io/images/placeholders/128x128.png">
+    </p>
+  </figure>
+  <div class="media-content">
+  <form class="reply-form mt-3" data-commentid='${comment._id}'>
+  <div class="field">
+    <label for="reply-name">Leave Your Name</label>
+    <input class="form-input" name="reply-name" required />
+  </div>
+  <div class="field">
+  <p class="control">
+    <label for="reply">Leave a Reply</label>
+    <textarea class="form-textarea form-input"  name="reply" required></textarea>
+  </p>
+    </div>
+    <div class="field">
+      <p class="control">
+        <button class="button">Add A Reply</button>
+      </p>
+    </div>
+  </div>
+</form>
+
+</article>
+    
+
+
       <h5 class="text-dark">${comment.writtenBy} commented on ${comment.createdAt}:</h5>
       <p>${comment.commentBody}</p>
       <div class="bg-dark ml-3 p-2 rounded" >
-        ${
-          comment.replies && comment.replies.length
-            ? `<h5>${comment.replies.length} ${
-                comment.replies.length === 1 ? 'Reply' : 'Replies'
-              }</h5>
-        ${comment.replies.map(printReply).join('')}`
-            : '<h5 class="p-1">No replies yet!</h5>'
-        }
+        
       </div>
-      <form class="reply-form mt-3" data-commentid='${comment._id}'>
-        <div class="mb-3">
-          <label for="reply-name">Leave Your Name</label>
-          <input class="form-input" name="reply-name" required />
-        </div>
-        <div class="mb-3">
-          <label for="reply">Leave a Reply</label>
-          <textarea class="form-textarea form-input"  name="reply" required></textarea>
-        </div>
-
-        <button class="mt-2 btn display-block w-100">Add Reply</button>
-      </form>
+     
   `;
 
   commentDiv.innerHTML = commentContent;
@@ -94,10 +136,22 @@ function printComment(comment) {
 
 function printReply(reply) {
   return `
-  <div class="card p-2 rounded bg-secondary">
-    <p>${reply.writtenBy} replied on ${reply.createdAt}:</p>
-    <p>${reply.replyBody}</p>
-  </div>
+  <article class="media">
+      <figure class="media-left">
+        <p class="image is-48x48">
+          <img src="https://bulma.io/images/placeholders/96x96.png">
+        </p>
+      </figure>
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong>${reply.writtenBy} replied on ${reply.createdAt}:</strong>
+            <br>
+            ${reply.replyBody}
+            <br>
+            <small><a>Like</a> · <a>Reply</a> · 2 hrs</small>
+          </p>
+        </div>
 `;
 }
 
