@@ -26,13 +26,13 @@ getAllStocks(req,res) {
    
         getStockById({ params }, res) {
         Stocks.findOne({ _id: params.id })
-        .then(dbPizzaData => {
+        .then(dbStockData => {
         // If no pizza is found, send 404
-        if (!dbPizzaData) {
+        if (!dbStockData) {
         res.status(404).json({ message: 'No pizza found with this id!' });
         return;
         }
-        res.json(dbPizzaData);
+        res.json(dbStockData);
         })
         .catch(err => {
         console.log(err);

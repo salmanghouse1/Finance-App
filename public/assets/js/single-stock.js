@@ -9,12 +9,13 @@ const $commentSection = document.querySelector('#comment-section');
 const $newCommentForm = document.querySelector('#new-comment-form');
 
 let stockId;
-function getStocks() {
+function getStock() {
   // get id of pizza
   const searchParams = new URLSearchParams(document.location.search.substring(1));
+  console.log(searchParams);
   const stocksId = searchParams.get('id');
   // get pizzaInfo
-  fetch(`/api/stocks/${stocksId}`)
+  fetch(`/api/stocks/${stocksId}`,{method: 'GET'})
   .then(response => {
   console.log(response);
   return response.json();
@@ -171,4 +172,4 @@ $backBtn.addEventListener('click', function() {
 
 $newCommentForm.addEventListener('submit', handleNewCommentSubmit);
 $commentSection.addEventListener('submit', handleNewReplySubmit);
-getStocks();
+getStock();

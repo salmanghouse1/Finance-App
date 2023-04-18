@@ -17,9 +17,11 @@ router
  .post(createStock);
 // Set up GET one, PUT, and DELETE at /api/pizzas/:id
 router
- .route('/:id/')
+ .route('/:id')
  .get(getStockById)
  .put(updateStock)
  .delete(deleteStock);
  
+
+
 module.exports = router;
