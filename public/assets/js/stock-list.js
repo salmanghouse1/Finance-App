@@ -29,7 +29,7 @@ const printStock = ({ _id, stockName, createdBy, createdAt,currentPrice,soldPric
           <p class="subtitle"><b>currentPrice:</b>${currentPrice}</p>
           <p class="subtitle"> <b>Sold Price:</b>${soldPrice}</p>
           <p class="subtitle"><b>Bought Price:</b>${boughtPrice}</p>    
-          
+          <a class="btn display-block w-100 mt-auto" href="/stock?id=${_id}">See the discussion.</a>
           </div>
 
           <div class="column is-1"></div>

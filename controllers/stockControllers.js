@@ -7,7 +7,7 @@ const stockController={
 // createPizza
 createStock({ body }, res) {
     Stocks.create(body)
-    .then(dbPizzaData => res.json(dbPizzaData))
+    .then(dbStockData => res.json(dbStockData))
     .catch(err => res.status(400).json(err));
    },
 getAllStocks(req,res) {
