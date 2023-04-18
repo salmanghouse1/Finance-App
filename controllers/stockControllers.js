@@ -1,5 +1,5 @@
 
-const Stocks = require('../models/stocks.js');
+const Stocks = require('./models/stocks.js');
 
 
 
