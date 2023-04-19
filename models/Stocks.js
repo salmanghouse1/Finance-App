@@ -55,7 +55,8 @@ ref:'Comment'
 stockSchema.virtual('commentCount').get(function() {
   return this.comments.reduce((total, comment) => total + comment.replies.length + 1, 0);
  });
-const Stock = mongoose.model('Stock',stockSchema);
+const Stocks = mongoose.model('Stocks',stockSchema);
+
 module.exports = Stocks;
 
 
