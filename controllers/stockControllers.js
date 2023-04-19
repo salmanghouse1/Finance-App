@@ -1,5 +1,5 @@
 
-const Stocks = require('../models/index');
+const Stocks = require('../models/Stocks');
 
 
 
