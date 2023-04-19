@@ -1,32 +1,5 @@
-// const mongoose = require('mongoose');
-// const {Schema}= require('mongoose');
-
-
-
-
-
-// const commentSchema=new Schema({
-
-// writtenBy:{
-//     type:String
-// },
-// createdAt:{
-//     type:Date,
-//     default:Date.now
-// },
-// commentBody:{
-//     type:String,
-// }
-
-
-// })
-
-
-
-// module.exports= mongoose.models.Comment||mongoose.model('Comment',commentSchema);
-
 const mongoose = require('mongoose');
-const {Schema,Types,model}= require('mongoose');
+const Schema = mongoose.Schema;
 
 const dateFormat = require('../utils/dateFormat');
 
@@ -85,6 +58,6 @@ CommentSchema.virtual('replyCount').get(function() {
     return this.replies.length;
    });
 
-const Comment = model('Comment',CommentSchema);
+const Comment = mongoose.model('Comment',CommentSchema);
 
 module.exports= Comment;

@@ -1,6 +1,6 @@
-const {Schema,model}= require('mongoose');
 const dateFormat = require('../utils/dateFormat');
-
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 
 
@@ -54,7 +54,7 @@ ref:'Comment'
 stockSchema.virtual('commentCount').get(function() {
   return this.comments.reduce((total, comment) => total + comment.replies.length + 1, 0);
  });
-const Stocks = model('Stocks',stockSchema);
+const Stocks = mongoose.model('Stocks',stockSchema);
 
 module.exports = Stocks;
 
