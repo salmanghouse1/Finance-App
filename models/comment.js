@@ -26,7 +26,7 @@
 // module.exports= mongoose.models.Comment||mongoose.model('Comment',commentSchema);
 
 const mongoose = require('mongoose');
-const {Schema,Types}= require('mongoose');
+const {Schema,Types,model}= require('mongoose');
 
 const dateFormat = require('../utils/dateFormat');
 
@@ -85,6 +85,6 @@ CommentSchema.virtual('replyCount').get(function() {
     return this.replies.length;
    });
 
-const Comment = mongoose.model('Comment',CommentSchema);
+const Comment = model('Comment',CommentSchema);
 
 module.exports= Comment;
