@@ -21,7 +21,7 @@ mongoose
 DEMO AND PRESENTATION MVP:
 
 
-[https://img.youtube.com/vi/czl-rmJSOD8/maxresdefault.jpgwidth="50%"] 
+[https://img.youtube.com/vi/czl-rmJSOD8/maxresdefault.jpg width="50%"] 
 (https://youtu.be/czl-rmJSOD8 "Presentation Video")
 
 
