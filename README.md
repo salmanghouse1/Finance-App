@@ -5,9 +5,11 @@ Tech Used
 Node.js, express, mongoose,html,css,javascript
 
 Usage
-1."npm install" in root directory in cmd
-2. "create dotenv file and add variable MONGODB_URI=<your mongodb connection string>
-3."npm start" in root directory in cmd
+
+* Local Environment
+1. A numbered list "npm install" in root directory in cmd
+2. "create dotenv file and add variable MONGODB_URI="your mongodb connection string"
+3. "npm start" in root directory in cmd
  
 
 Packages Used:
@@ -18,6 +20,9 @@ mongoose
 
 DEMO AND PRESENTATION MVP:
 
-[<img src="https://photos.app.goo.gl/D3BHiQ6i4YN1oGQm8" width="50%">](https://youtu.be/czl-rmJSOD8 "Now in Android: 55")
+
+[https://img.youtube.com/vi/czl-rmJSOD8/maxresdefault.jpgwidth="50%"] 
+(https://youtu.be/czl-rmJSOD8 "Presentation Video")
+
 
 # Deployed at [Heroku](https://peaceful-sierra-27353.herokuapp.com/)
