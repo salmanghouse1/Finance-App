@@ -21,8 +21,8 @@ mongoose
 DEMO AND PRESENTATION MVP:
 
 
-[https://img.youtube.com/vi/czl-rmJSOD8/maxresdefault.jpg width="50%"] 
-(https://youtu.be/czl-rmJSOD8 "Presentation Video")
+
+[![Presentation](https://img.youtube.com/vi/czl-rmJSOD8/maxresdefault.jpg)](https://youtu.be/czl-rmJSOD8)
 
 
 # Deployed at [Heroku](https://peaceful-sierra-27353.herokuapp.com/)
