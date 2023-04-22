@@ -18,6 +18,6 @@ mongoose
 
 DEMO AND PRESENTATION MVP:
 
-[<img src="https://i.ytimg.com/vi/Hc79sDi3f0U/maxresdefault.jpg" width="50%">](https://youtu.be/czl-rmJSOD8 "Now in Android: 55")
+[<img src="https://photos.app.goo.gl/D3BHiQ6i4YN1oGQm8" width="50%">](https://youtu.be/czl-rmJSOD8 "Now in Android: 55")
 
 # Deployed at [Heroku](https://peaceful-sierra-27353.herokuapp.com/)
